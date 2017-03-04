@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Action extends Model
 {
-    public function actions() {
-    	return $this->hasOne('App\ActionType');
+    public function type() {
+    	return $this->belongsTo('App\ActionType', 'action_type_id');
     }
 
 }

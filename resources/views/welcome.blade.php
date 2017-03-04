@@ -1,36 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.frontend')
 
-        <title>Laravel</title>
+@section('title', 'Home')
 
-        <link rel="stylesheet" type="text/css" href="{{ mix('/css/app.css') }}">
+@section('content')
 
-    </head>
-    <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                    @endif
-                </div>
-            @endif
 
             <div class="content">
-                <div class="title m-b-md">
+                <h1 class="title m-b-md">
                     Today I...
+                </h1>
+
+                <div id="types">
+                    @foreach ($types as $type)
+                        <button data-type-id="{{ $type->id }}">{{ $type->name }}</button>
+                    @endforeach 
                 </div>
+
+                <form id="action-form" method="POST" action="{{ action('ActionController@store') }}">
+                    {{ csrf_field() }}
+                    <input id="typeInput" type="hidden" name="type" value="1">
+                    <input type="text" name="text" placeholder="thing that you did...">
+                    <input type="submit" name="submit" value="Boom!">
+                </form>
 
             </div>
         </div>
 
-        <script src="{{ mix('/js/app.js') }}"></script>
-
-    </body>
-</html>
+@endsection('body')

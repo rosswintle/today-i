@@ -43,3 +43,20 @@ window.axios.defaults.headers.common = {
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
+
+
+(function todayiButtonSetup() {
+    var buttons = document.querySelectorAll('#types button');
+    var typeInput = document.querySelector('#typeInput');
+    buttons.forEach( function(e) {
+        e.addEventListener('click', function(e) {
+            e.preventDefault();
+            buttons.forEach( function(button) {
+                button.classList.remove('selected');
+            } );
+            this.classList.add('selected');
+            var thisId = this.dataset.typeId;
+            typeInput.value = thisId;
+        });
+    });
+})();

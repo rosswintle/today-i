@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'StartController@index');
+Route::group(['middleware' => 'auth'], function () {
+	Route::resource('action', 'ActionController', ['only' => ['store','edit','update','destroy']]);
 });
+Route::resource('action', 'ActionController', ['except' => ['store','edit','update','destroy']]);
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/{username}', 'ActionController@index');

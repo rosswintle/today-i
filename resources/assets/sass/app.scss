@@ -18,7 +18,7 @@ html, body {
 }
 
 .full-height {
-    height: 100vh;
+    height: 80vh;
 }
 
 .flex-center {
@@ -32,9 +32,8 @@ html, body {
 }
 
 .top-right {
-    position: absolute;
-    right: 10px;
-    top: 18px;
+    text-align: right;
+    margin-bottom: 3rem;
 }
 
 .content {
@@ -43,6 +42,7 @@ html, body {
 
 .title {
     font-size: 84px;
+    margin-top: 0;
 }
 
 .links > a {
@@ -57,4 +57,39 @@ html, body {
 
 .m-b-md {
     margin-bottom: 30px;
+}
+
+#types {
+
+    margin: 2rem 0 1rem 0;
+
+    button {
+        outline: none;
+        display: inline-block;
+        border-radius: 0;
+        border: 1px solid #636b6f;
+        background-color: transparent;
+        color: #636b6f;
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        &.selected {
+            background-color: #039B94;
+            color: #FFFFFF;
+        }
+    }
+}
+
+#action-form {
+    input[name="text"] {
+        font-size: 1.2rem;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    input[type="submit"] {
+        font-size: 1.5rem;
+        border-radius: 0;
+        border: 1px solid #636b6f;
+        outline: none;   
+        background-color: #FFF;     
+    }
 }

@@ -18,3 +18,23 @@ Vue.component('example', require('./components/Example.vue'));
 const app = new Vue({
     el: '#app'
 });
+
+function todayiButtonSetup() {
+    var buttons = document.querySelectorAll('#types button');
+    var typeInput = document.querySelector('#typeInput');
+    buttons.forEach( function(e) {
+        e.addEventListener('click', function(e) {
+            e.preventDefault();
+            buttons.forEach( function(button) {
+                button.classList.remove('selected');
+            } );
+            this.classList.add('selected');
+            var thisId = this.dataset.typeId;
+            typeInput.value = thisId;
+        });
+    });
+};
+
+
+document.addEventListener("DOMContentLoaded", todayiButtonSetup);
+
