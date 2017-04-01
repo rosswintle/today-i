@@ -3,38 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Action;
-use App\User;
 use App\ActionType;
-use Illuminate\Support\Facades\Auth;
 
-class ActionController extends Controller
+class ActionTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index( $username = null )
+    public function index()
     {
-        if ($username) {
-            $user = User::where('username', $username)->firstOrFail();
-        } else {
-            $user = Auth::user();
-        }
-
-        $types = ActionType::all();
-
-        $userActions = Action::with('type')
-            ->where('user_id', $user->id)
-            ->latest()
-            ->paginate(10);
-
-        return view('profile', [
-            'types' => $types,
-            'actions' => $userActions,
-        ]);
-
+        $actionTypes = ActionType::all();
+        return view('admin.action-types-list', [
+            'actionTypes' => $actionTypes,
+            ]);
     }
 
     /**
@@ -44,7 +27,7 @@ class ActionController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.action-type-new');
     }
 
     /**
@@ -55,13 +38,7 @@ class ActionController extends Controller
      */
     public function store(Request $request)
     {
-        $action = new Action;
-        $action->action_type_id = $request->input('type');
-        $action->text = $request->input('text');
-        $action->user_id = 1;
-        $action->save();
-        
-        return redirect('/');
+        //
     }
 
     /**

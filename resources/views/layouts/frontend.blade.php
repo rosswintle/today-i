@@ -14,7 +14,7 @@
         @if (Route::has('login'))
             <div class="top-right links">
                 @if (Auth::check())
-                    <a href="{{ url('/home') }}">Home</a>
+                    <a href="{{ url('/') }}">Home</a>
                     @component('components.logout-link')
                     @endcomponent
                     @component('components.logout-form')

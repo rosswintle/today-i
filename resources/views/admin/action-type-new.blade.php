@@ -8,12 +8,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    <ul>
-                        <li>
-                            <a href="{{ action('ActionTypeController@index') }}">Action Types</a>
-                        </li>
-                    </ul>
-
+                    <h2>New action type</h2>
                 </div>
             </div>
         </div>

@@ -26,9 +26,9 @@ function todayiButtonSetup() {
         e.addEventListener('click', function(e) {
             e.preventDefault();
             buttons.forEach( function(button) {
-                button.classList.remove('selected');
+                button.classList.remove('is-active');
             } );
-            this.classList.add('selected');
+            this.classList.add('is-active');
             var thisId = this.dataset.typeId;
             typeInput.value = thisId;
         });
