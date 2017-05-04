@@ -16,7 +16,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::resource('action', 'ActionController', ['only' => ['store','edit','update','destroy']]);
 	Route::resource('action_type', 'ActionTypeController');
 });
-Route::resource('action', 'ActionController', ['except' => ['store','edit','update','destroy']]);
+Route::get('/action', 'ActionController@store');
 
 Auth::routes();
 

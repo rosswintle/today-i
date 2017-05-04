@@ -17,10 +17,20 @@ class ActionController extends Controller
      */
     public function index( $username = null )
     {
-        if ($username) {
-            $user = User::where('username', $username)->firstOrFail();
+        $authenticatedUser = Auth::user();
+
+        if ( $username ) {
+            $user = User::where( 'username', $username )->firstOrFail();
+            $my_profile = false;
+            if ( $authenticatedUser && $authenticatedUser->ID == $user->ID ) {
+                $my_profile = true;
+            }
         } else {
-            $user = Auth::user();
+            if (is_null($authenticatedUser)) {
+                abort( 404, "User not found" );
+            } else {
+                $my_profile = true;
+            }
         }
 
         $types = ActionType::all();
@@ -30,11 +40,18 @@ class ActionController extends Controller
             ->latest()
             ->paginate(10);
 
-        return view('profile', [
-            'types' => $types,
-            'actions' => $userActions,
-        ]);
-
+        if ( $my_profile ) {
+            return view('my-profile', [
+                'user' => $user,
+                'types' => $types,
+                'actions' => $userActions,
+            ]);
+        } else {
+            return view('profile', [
+                'user' => $user,
+                'actions' => $userActions,
+            ]);
+        }
     }
 
     /**
@@ -55,9 +72,15 @@ class ActionController extends Controller
      */
     public function store(Request $request)
     {
+        if ( $request->session()->get('posted_action_data') ) {
+            $actionData = $request->session()->get('posted_action_data');
+        } else {
+            $actionData = $request->all();
+        }
+
         $action = new Action;
-        $action->action_type_id = $request->input('type');
-        $action->text = $request->input('text');
+        $action->action_type_id = $actionData['type'];
+        $action->text = $actionData['text'];
         $action->user_id = 1;
         $action->save();
         
