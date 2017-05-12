@@ -24,29 +24,9 @@ class StartController extends Controller
 
     	$types = ActionType::all();
 
-        $user = Auth::user();
-
-    	if ($user) {
-    		
-    		$userActions = Action::with('type')
-    			->where('user_id', $user->id)
-    			->latest()
-    			->paginate(10);
-
-    		return view('my-profile', [
-                'user' => $user,
-    			'types' => $types,
-    			'actions' => $userActions,
-    		]);
-    	
-    	} 
-    	else 
-    	{
-
-    		return view('welcome', [
-    			'types' => $types,
-    			]);
-		}
+		return view('welcome', [
+			'types' => $types,
+			]);
 
     }
 

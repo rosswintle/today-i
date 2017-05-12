@@ -1,4 +1,4 @@
-<form id="action-form" method="POST" action="{{ action('ActionController@store') }}">
+<form id="action-form" method="POST" action="{{ Auth::check() ? action('ActionController@store') : action('SignupController@index') }}">
 
     <div id="types">
         @foreach ($types as $type)

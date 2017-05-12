@@ -12,14 +12,23 @@
 */
 
 Route::get('/', 'StartController@index');
+
+// This covers the case of needing to log in or register to post
+// This must come before the Auth-protected routes
+Route::post('/signup', 'SignupController@index');
+
 Route::group(['middleware' => 'auth'], function () {
+	Route::get('/me', 'MyProfileController@show');
 	Route::resource('action', 'ActionController', ['only' => ['store','edit','update','destroy']]);
+});
+
+
+// Admin-only functions
+Route::group(['middleware' => 'auth'], function () {
 	Route::resource('action_type', 'ActionTypeController');
 });
-Route::get('/action', 'ActionController@store');
 
 Auth::routes();
 
+// Should get rid of this really
 Route::get('/home', 'HomeController@index');
-
-Route::get('/{username}', 'ActionController@index');
