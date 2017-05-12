@@ -79,7 +79,6 @@ class ActionController extends Controller
         } else {
             $actionData = $request->all();
         }
-        dd($actionData);
 
         $action = new Action;
         $action->action_type_id = $actionData['type'];
