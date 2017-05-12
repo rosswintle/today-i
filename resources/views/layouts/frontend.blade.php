@@ -11,19 +11,32 @@
 
     </head>
     <body>
-        @if (Route::has('login'))
-            <div class="top-right links">
-                @if (Auth::check())
-                    <a href="{{ url('/') }}">Home</a>
-                    @component('components.logout-link')
-                    @endcomponent
-                    @component('components.logout-form')
-                    @endcomponent
-                @else
-                    <a href="{{ url('/login') }}">Login</a>
-                @endif
+        
+        <nav class="nav">
+            <div class="container">
+            
+                <div class="nav-left">
+                    <a class="nav-item" href="{{ url('/') }}">Today I</a>
+                </div>
+
+                <div class="nav-right">
+
+                    @if (Route::has('login'))
+                        @if (Auth::check())
+                            <a class="nav-item" href="{{ url('/') }}">Home</a>
+                            <a class="nav-item" href="{{ url('/me') }}">Me</a>
+                            @component('components.logout-link')
+                            @endcomponent
+                            @component('components.logout-form')
+                            @endcomponent
+                        @else
+                            <a class="nav-item" href="{{ url('/login') }}">Login</a>
+                        @endif
+                    @endif
+
+                </div>
             </div>
-        @endif
+        </nav>
 
         @yield('content')
         <script src="{{ mix('/js/app.js') }}"></script>
