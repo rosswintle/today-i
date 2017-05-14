@@ -39,6 +39,14 @@
         </nav>
 
         @yield('content')
+
+        <footer class="footer">
+            <div class="container">
+                <div class="content has-text-centered">
+                    Today-I is a project of Oikos.
+                </div>
+            </div>
+        </footer>
         <script src="{{ mix('/js/app.js') }}"></script>
     </body>
 </html>
