@@ -66,6 +66,10 @@
     </div>
 
     <div class="field">
+        {!! Recaptcha::render() !!}
+    </div>
+
+    <div class="field">
         <p class="control">
             <button type="submit" class="button is-primary">
                 Register
