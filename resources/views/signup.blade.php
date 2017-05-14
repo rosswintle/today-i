@@ -12,20 +12,21 @@
                 </div>
         </section>
 
-        <section>
+        <section class="section">
             <div class="container">
 
                 <div class="columns">
                     <div class="column">
-                        <div class="content has-text-centered">
-                            <h2>Sign up</h2>
-
+                        <div class="content">
+                            <h2 class="title">Sign up</h2>
+                            @component('components/register-form')
+                            @endcomponent
                         </div>
                     </div>
 
                     <div class="column">
-                        <div class="content has-text-centered">
-                            <h2>Login</h2>
+                        <div class="content">
+                            <h2 class="title">Login</h2>
                             @component('components/login-form')
                             @endcomponent
                         </div>

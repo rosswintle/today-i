@@ -1,17 +1,19 @@
-@extends('layouts.admin')
+@extends('layouts.frontend')
+
+@section('title', 'Login')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-                <div class="panel-body">
-                    @component('components/login-form')
-                    @endcomponent
-                </div>
+
+<section class="section">
+    <div class="columns">
+        <div class="column is-half is-offset-one-quarter">
+                <h2 class="title">Login</h2>
+
+                @component('components/login-form')
+                @endcomponent
             </div>
         </div>
     </div>
-</div>
+</section>
+
 @endsection

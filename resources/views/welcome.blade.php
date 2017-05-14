@@ -45,7 +45,7 @@
                 @endcomponent
 
             </div>
-        </div>
+        </section>
 
 
 @endsection('body')
