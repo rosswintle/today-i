@@ -18,19 +18,22 @@
         </section>
         <section class="hero is-light">
             <div class="hero-body">
-                <div class="container content">
-                    <h3 class="subtitle">
-                        Creativity is more important than ever. What will you do today?
-                    </h3>
-                    <p>
-                        In a world that seems to have gone mad recently, creativity has become more important than ever. Not just "arts", but making, doing, sharing, writing, hacking, teaching, growing, mending and so many other things are creative endeavours.
-                    </p>
-                    <p>
-                        I try to daily share something I've made with the hashtag #todayimade and something I'm thankful for with the hashtag #thankyoutoday.
-                    </p>
-                    <p>
-                        <strong>"Today I..."</strong> is partly an excuse to practise my coding, but it will also hopefully be a reminder to do something creative every day; to take pride in that; to share that with others; and to encourge them to do the same.
-                    </p>
+                <div class="container">
+                    <div class="columns">
+                        <div class="column is-three-quarters content">
+                        <h3 class="subtitle">
+                            Creativity is more important than ever. What will you do today?
+                        </h3>
+                        <p>
+                            In a world that seems to have gone mad recently, creativity has become more important than ever. Not just "arts", but making, doing, sharing, writing, hacking, teaching, growing, mending and so many other things are creative endeavours.
+                        </p>
+                        <p>
+                            <strong>"Today I..."</strong> is a reminder to do something creative or thoughtful every day, and a journal of those activities. To inspire your creativity; to share it with others; and to encourge them to do the same.
+                        </p>
+                        <p>
+                            Take your first creative action and enter it below to get started.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>

@@ -27,8 +27,12 @@ function todayiButtonSetup() {
             e.preventDefault();
             buttons.forEach( function(button) {
                 button.classList.remove('is-active');
+                button.classList.remove('is-primary')
+                button.classList.add('is-info');
             } );
             this.classList.add('is-active');
+            this.classList.add('is-primary');
+            this.classList.remove('is-info');
             var thisId = this.dataset.typeId;
             typeInput.value = thisId;
         });
