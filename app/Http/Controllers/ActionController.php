@@ -73,6 +73,8 @@ class ActionController extends Controller
     public function store(Request $request)
     {
 
+        $user=Auth::user();
+
         if ( $request->session()->has('posted_action_data') ) {
             $actionData = $request->session()->get('posted_action_data');
             $request->session()->forget('posted_action_data');
@@ -83,7 +85,7 @@ class ActionController extends Controller
         $action = new Action;
         $action->action_type_id = $actionData['type'];
         $action->text = $actionData['text'];
-        $action->user_id = 1;
+        $action->user_id = $user->id;
         $action->save();
         
         return redirect('/me');
