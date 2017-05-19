@@ -20,7 +20,7 @@
                                 <tr>
                                     <td>{{ $actionType->id }}</td>
                                     <td>{{ $actionType->name }}</td>
-                                    <td>Coming soon!</td>
+                                    <td>{{ $actionType->icon_class }}</td>
                                     <td>
                                         <a href="{{ action('ActionTypeController@edit', ['id' => $actionType->id]) }}">Edit</a>
                                         | <a href="{{ action('ActionTypeController@destroy', ['id' => $actionType->id]) }}">Delete</a>
