@@ -4,18 +4,9 @@
 
 @section('content')
 
-        <section class="hero is-primary">
-            <div class="hero-body">
-                <div class="container">
-                    <h1 class="title">
-                        Today I...
-                    </h1>
-                    <h2 class="subtitle">
-                        A daily call to creative action
-                    </h2>
-                </div>
-            </div>
-        </section>
+        @component('components/hero')
+        @endcomponent
+
         <section class="hero is-light">
             <div class="hero-body">
                 <div class="container">

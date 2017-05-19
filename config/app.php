@@ -167,6 +167,7 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
+        Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -178,7 +179,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         /* Additional providers */
-        Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
+        App\Providers\StatsServiceProvider::class,
 
     ],
 
