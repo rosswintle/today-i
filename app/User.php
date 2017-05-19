@@ -9,6 +9,9 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    const USER_TYPE_NORMAL = 0;
+    const USER_TYPE_ADMIN  = 1;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -30,4 +33,5 @@ class User extends Authenticatable
     public function actions() {
         return $this->hasMany('App\Action');
     }
+
 }

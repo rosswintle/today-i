@@ -25,8 +25,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 // Admin-only functions
-Route::group(['middleware' => 'auth'], function () {
-	Route::resource('action_type', 'ActionTypeController');
+Route::group(['middleware' => 'checkadmin'], function () {
+	Route::resource('action-type', 'ActionTypeController');
 });
 
 Auth::routes();
