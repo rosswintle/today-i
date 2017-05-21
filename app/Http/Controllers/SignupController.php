@@ -10,9 +10,8 @@ class SignupController extends Controller
 	public function index( Request $request )
 	{
 		
-		if ( $request->session()->has('posted_action_data') ) {
+		if ( $request->has('type') && $request->has('text') ) {
 			$request->session()->put('posted_action_data', $request->all() );
-			$request->session()->save();
 		}
 
 		return view( 'signup' );
