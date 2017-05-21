@@ -82,6 +82,8 @@ class ActionController extends Controller
             $actionData = $request->all();
         }
 
+        $request->session()->flash('success_alert', 'Yay! Great work. Every creative, thoughtful action makes a difference.');
+
         $action = new Action;
         $action->action_type_id = $actionData['type'];
         $action->text = $actionData['text'];

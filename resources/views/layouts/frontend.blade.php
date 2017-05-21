@@ -38,6 +38,9 @@
             </div>
         </nav>
 
+        @component('components/alerts');
+        @endcomponent
+
         @yield('content')
 
         <footer class="footer">
