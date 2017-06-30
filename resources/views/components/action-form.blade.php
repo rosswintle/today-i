@@ -2,7 +2,7 @@
 
     <div id="types">
         @foreach ($types as $type)
-            <button data-type-id="{{ $type->id }}" class="button is-info is-large">
+            <button type="button" data-type-id="{{ $type->id }}" class="button is-info is-large">
                 <span class="icon">
                     <i class="fa {{ $type->icon_class }}"></i>
                 </span>
