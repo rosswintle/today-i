@@ -25,7 +25,9 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('todayi:send-reminders')
-                 ->everyMinute()->withoutOverlapping;
+                 ->everyFiveMinutes()
+                 ->withoutOverlapping()
+                 ->appendOutputTo('./storage/logs/DailyReminders.log');
     }
 
     /**

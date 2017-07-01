@@ -5,7 +5,7 @@ namespace App;
 class DailyReminders {
 
 	function sendAll() {
-		echo "Sending daily reminders";
+		echo date('Y-m-d H-i-s') . ": Sending daily reminders\n";
 	}
 
 }
