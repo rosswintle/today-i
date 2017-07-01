@@ -1,7 +1,7 @@
 @component('mail::message')
 # Your daily creativity reminder
 
-Hello {{ $name }}!
+Hello {{ $user->name }}!
 
 This is your daily reminder from Today I to change the world by doing something creative.
 

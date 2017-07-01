@@ -11,17 +11,18 @@ class DailyReminder extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $name = "Ross";
     public $url = '';
+    public $user = '';
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct( $user )
     {
         $this->url = action('MyProfileController@show');
+        $this->user = $user;
     }
 
     /**
