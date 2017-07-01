@@ -180,6 +180,7 @@ return [
 
         /* Additional providers */
         App\Providers\StatsServiceProvider::class,
+        App\Providers\DailyRemindersProvider::class,
 
     ],
 
