@@ -38,10 +38,12 @@
             </div>
         </nav>
 
-        @component('components/alerts');
-        @endcomponent
+        <div id="app">
+            @component('components/alerts');
+            @endcomponent
 
-        @yield('content')
+            @yield('content')
+        </div>
 
         <footer class="footer">
             <div class="container">

@@ -21,4 +21,6 @@
         @component( 'components/action-list', [ 'actions' => $actions ] )
         @endcomponent
 
+        <email-hour-selector initial-hour="12" initial-action="http://"></email-hour-selector>
+
 @endsection
