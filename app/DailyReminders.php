@@ -18,7 +18,7 @@ class DailyReminders {
 			->get();
 		echo date('Y-m-d H-i-s') . ": Sending daily reminders\n";
 		foreach( $usersToSend as $thisUser) {
-			echo date('Y-m-d H-i-s') . ": Sending reminder to $thisUser->email";
+			echo date('Y-m-d H-i-s') . ": Sending reminder to $thisUser->email\n";
 			Mail::to( $thisUser )->send( new DailyReminder( $thisUser ) );
 			$thisUser->last_email_sent_hour = (int) date('H');
 			$thisUser->last_email_sent_date = date('Y-m-d');
