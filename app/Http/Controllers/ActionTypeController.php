@@ -16,7 +16,7 @@ class ActionTypeController extends Controller
     public function index()
     {
         $actionTypes = ActionType::all();
-        return view('admin.action-types-list', [
+        return view('admin.action-type.index', [
             'actionTypes' => $actionTypes,
             ]);
     }
@@ -28,7 +28,7 @@ class ActionTypeController extends Controller
      */
     public function create()
     {
-        return view('admin.action-type-new');
+        return view('admin.action-type.new');
     }
 
     /**
@@ -68,7 +68,7 @@ class ActionTypeController extends Controller
     public function edit($id)
     {
         $actionType = ActionType::findOrFail($id);
-        return view('admin.action-type-edit', [ 'actionType' => $actionType ]);
+        return view('admin.action-type.edit', [ 'actionType' => $actionType ]);
     }
 
     /**
