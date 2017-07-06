@@ -25,6 +25,7 @@
                         @if (Auth::check())
                             <a class="nav-item" href="{{ url('/') }}">Home</a>
                             <a class="nav-item" href="{{ url('/me') }}">Me</a>
+                            <a class="nav-item" href="{{ action('UserSettingsController@edit', ['user' => Auth::id() ]) }}">Settings</a>
                             @component('components.logout-link')
                             @endcomponent
                             @component('components.logout-form')

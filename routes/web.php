@@ -18,17 +18,19 @@ Route::post('/signup', 'SignupController@index');
 // This is for testing really, but you could end up here somehow
 Route::get('/signup', 'SignupController@index');
 
-Route::group(['middleware' => 'auth'], function () {
-	Route::get('/me', 'MyProfileController@show');
-	Route::resource('action', 'ActionController', ['only' => ['store','edit','update','destroy']]);
-});
-
-
 // Admin-only functions
 Route::group(['middleware' => 'checkadmin'], function () {
 	Route::resource('action-type', 'ActionTypeController');
 	Route::resource('user', 'UserController', ['only' => ['index']]);
 });
+
+Route::group(['middleware' => 'auth'], function () {
+	Route::get('/me', 'MyProfileController@show');
+	Route::resource('action', 'ActionController', ['only' => ['store','edit','update','destroy']]);
+	Route::resource('user', 'UserSettingsController', ['only' => ['edit','update','destroy']]);
+});
+
+
 
 Auth::routes();
 
