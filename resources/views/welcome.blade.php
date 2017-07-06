@@ -22,7 +22,7 @@
                             <strong>"Today I..."</strong> is a reminder to do something creative or thoughtful every day, and a journal of those activities. To inspire your creativity; to share it with others; and to encourge them to do the same.
                         </p>
                         <p>
-                            Take your first creative action and enter it below to get started.
+                            Take your first creative action and enter it below to get started.  We'll email you a reminder at 8am (GMT, for now at least) every day (you can change when this happens in your settings) and you can record your daily creativity in a private log - it's not a public list!
                         </p>
                     </div>
                 </div>
