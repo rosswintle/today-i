@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class UserSettingsController extends Controller
@@ -15,6 +16,9 @@ class UserSettingsController extends Controller
      */
     public function edit(User $user)
     {
+        if (! (Auth::user()->isAdmin() || Auth::id() == $user->id ) ) {
+            abort( 403, 'Oi! You can\'t do that!' );
+        }
         return view('user-settings.edit', [ 'user' => $user ]);
     }
 
@@ -27,6 +31,10 @@ class UserSettingsController extends Controller
      */
     public function update(Request $request, User $user)
     {
+        if (! (Auth::user()->isAdmin() || Auth::id() == $user->id ) ) {
+            abort( 403, 'Oi! You can\'t do that!' );
+        }
+
         $user->fill( [
             'name' => $request->name,
             'email_hour' => $request->email_hour,            

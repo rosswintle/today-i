@@ -34,4 +34,8 @@ class User extends Authenticatable
         return $this->hasMany('App\Action');
     }
 
+    public function isAdmin() {
+        return $this->user_type == self::USER_TYPE_ADMIN;
+    }
+
 }
