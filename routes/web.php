@@ -22,6 +22,7 @@ Route::get('/signup', 'SignupController@index');
 Route::group(['middleware' => 'checkadmin'], function () {
 	Route::resource('action-type', 'ActionTypeController');
 	Route::resource('user', 'UserController', ['only' => ['index']]);
+	Route::get('/home', 'HomeController@index');
 });
 
 Route::group(['middleware' => 'auth'], function () {
@@ -33,6 +34,3 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 Auth::routes();
-
-// Should get rid of this really
-Route::get('/home', 'HomeController@index');
