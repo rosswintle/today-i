@@ -28,7 +28,7 @@ html, body {
 }
 
 .logo {
-    padding-left: 32px;
+    padding-left: calc( 32px + 0.75rem );
     font-weight: bold;
     &:before {
         content: '';
@@ -36,7 +36,7 @@ html, body {
         width: 32px;
         height: 32px;
         position: absolute;
-        left: 0;
+        left: 0.75rem;
         top: 8px;
         background: url(../icons/noun_710550.svg) center center;
         background-size: 100%;

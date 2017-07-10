@@ -12,8 +12,8 @@
     </head>
     <body>
         
-        <nav class="nav">
-            <div class="container">
+        <div class="container">
+            <nav class="nav">
             
                 <div class="nav-left logo">
                     <a class="nav-item" href="{{ url('/') }}">Today I</a>
@@ -35,8 +35,8 @@
                     @endif
 
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
 
         @component('components/alerts');
         @endcomponent
