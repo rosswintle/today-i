@@ -46,7 +46,8 @@
         <footer class="footer">
             <div class="container">
                 <div class="content has-text-centered">
-                    Today-I is a project of <a href="https://oikos.digital">Oikos Digital</a> and <a href="https://rosswintle.uk">Ross Wintle</a>.
+                    Today-I is a project of <a href="https://oikos.digital">Oikos Digital</a> and <a href="https://rosswintle.uk">Ross Wintle</a>.<br>
+                    Updates at <a href="https://twitter.com/today_i_team">@today_i_team</a>
                 </div>
             </div>
         </footer>
