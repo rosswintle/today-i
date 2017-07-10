@@ -20,7 +20,7 @@
         <input class="input is-large" type="text" name="text" placeholder="thing that you did...">
     </p>
     <p>
-        <input type="submit" name="submit" value="Boom!" class="button is-primary is-large">
+        <input type="submit" name="submit" value="{{ $randomness->actionButtonText() }}" class="button is-primary is-large">
     </p>
 
 </form>
