@@ -1,4 +1,4 @@
-@component('mail::message')
+@component('mail::message', ['user' => $user])
 # Your daily creativity reminder
 
 Hello {{ $user->name }}!

@@ -32,6 +32,7 @@ class DailyReminder extends Mailable
      */
     public function build()
     {
-        return $this->markdown('email.daily-reminder');
+        return $this->markdown('email.daily-reminder')
+            ->with('userData', $this->user);
     }
 }
