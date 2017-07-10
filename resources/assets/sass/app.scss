@@ -27,6 +27,23 @@ html, body {
     position: relative;
 }
 
+.logo {
+    padding-left: 32px;
+    font-weight: bold;
+    &:before {
+        content: '';
+        display: block;
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        left: 0;
+        top: 8px;
+        background: url(../icons/noun_710550.svg) center center;
+        background-size: 100%;
+        opacity: 0.7;
+    }
+}
+
 .top-right {
     text-align: right;
     margin-bottom: 3rem;

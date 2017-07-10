@@ -15,7 +15,7 @@
         <nav class="nav">
             <div class="container">
             
-                <div class="nav-left">
+                <div class="nav-left logo">
                     <a class="nav-item" href="{{ url('/') }}">Today I</a>
                 </div>
 
