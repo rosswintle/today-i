@@ -168,6 +168,7 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
         Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -233,6 +234,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 
