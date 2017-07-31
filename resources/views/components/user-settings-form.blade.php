@@ -35,6 +35,24 @@
         </label>
     </div>
 
+    <div class="field {{ $errors->has('twitter_username') ? ' has-error' : '' }}">
+        <label class="label" for="twitter_username">Twitter username</label>
+            <p>
+                <em>
+                    Add a Twitter username (without the @) and, assuming it's yours, you will be able to use it to log in!
+                </em>
+            </p>
+            <p class="control">
+                <input id="twitter_username" type="text" class="input" name="twitter_username" value="{{ $user->twitter_username }}">
+            </p>
+            @if ($errors->has('twitter_username'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('twitter_username') }}</strong>
+                </span>
+            @endif
+        </label>
+    </div>
+
     <div class="field{{ $errors->has('email_hour') ? ' has-error' : '' }}">
         <label class="label" for="email_hour">Email hour</label>
 

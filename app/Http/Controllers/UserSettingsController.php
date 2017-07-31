@@ -39,6 +39,7 @@ class UserSettingsController extends Controller
             'name' => $request->name,
             'email_hour' => $request->email_hour,
             'email_off' => $request->email_off ? date('Y-m-d') : NULL,
+            'twitter_username' => $request->twitter_username,
             ] );
         $user->save();
         $request->session()->flash('success_alert', 'Settings updated');
