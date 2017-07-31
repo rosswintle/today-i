@@ -31,6 +31,7 @@
                             @endcomponent
                         @else
                             <a class="nav-item" href="{{ url('/login') }}">Login</a>
+                            <a class="nav-item" href="{{ url('/signup') }}">Sign Up</a>
                         @endif
                     @endif
 
