@@ -12,6 +12,7 @@
 					<th>Username</th>
 					<th>Email</th>
 					<th>Type</th>
+					<td>Emails off?</td>
 				</tr>
 			</thead>
 			<tbody>
@@ -22,6 +23,7 @@
 						<td>{{ $user->username }}</td>
 						<td>{{ $user->email }}</td>
 						<td>{{ $user->user_type == App\User::USER_TYPE_ADMIN ? 'Admin' : 'Normal' }}</td>
+						<td>{{ is_null($user->email_off) ? '' : $user->email_off }}</td>
 					</tr>
 				@endforeach
 			</tbody>
