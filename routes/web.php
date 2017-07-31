@@ -18,6 +18,12 @@ Route::post('/signup', 'SignupController@index');
 // This is for testing really, but you could end up here somehow
 Route::get('/signup', 'SignupController@index');
 
+// Socialite routes
+Route::get('/login/facebook', 'FacebookLoginController@redirectToProvider');
+Route::get('/login/facebook/callback', 'FacebookLoginController@callback');
+Route::get('/login/twitter', 'TwitterLoginController@redirectToProvider');
+Route::get('/login/twitter/callback', 'TwitterLoginController@callback');
+
 // Admin-only functions
 Route::group(['middleware' => 'checkadmin'], function () {
 	Route::resource('action-type', 'ActionTypeController');
