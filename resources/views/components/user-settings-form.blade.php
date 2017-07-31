@@ -36,7 +36,7 @@
     </div>
 
     <div class="field{{ $errors->has('email_hour') ? ' has-error' : '' }}">
-        <label class="label" for="password">Email hour</label>
+        <label class="label" for="email_hour">Email hour</label>
 
             <p>
                 <em>
@@ -56,9 +56,9 @@
                 </span>
             </p>
 
-            @if ($errors->has('password'))
+            @if ($errors->has('email_hour'))
                 <span class="help-block">
-                    <strong>{{ $errors->first('password') }}</strong>
+                    <strong>{{ $errors->first('email_hour') }}</strong>
                 </span>
             @endif
         </label>
