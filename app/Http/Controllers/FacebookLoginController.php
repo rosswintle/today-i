@@ -17,9 +17,13 @@ class FacebookLoginController extends Controller
     function callback() {
     	$fbUser = Socialite::driver('facebook')->user();
     	
-    	$user = User::where([
-    		'email' => $fbUser->email,
-    		])->first();
+    	$user = User::firstOrCreate(
+    		[ 'email' => $fbUser->email, ],
+    		[ 'name' => $fbUser->name,
+    		  'username' => snake_case( $fbUser->name ),
+    		  'password' => str_random(40),
+    		 ]
+    	);
     	
     	if ($user) {
     		Auth::login($user, true);
