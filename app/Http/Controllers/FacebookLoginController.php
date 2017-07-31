@@ -15,10 +15,10 @@ class FacebookLoginController extends Controller
     }
 
     function callback() {
-    	$user = Socialite::driver('facebook')->user();
+    	$fbUser = Socialite::driver('facebook')->user();
     	
     	$user = User::where([
-    		'email' => $user->email,
+    		'email' => $fbUser->email,
     		])->first();
     	
     	if ($user) {
