@@ -37,7 +37,8 @@ class UserSettingsController extends Controller
 
         $user->fill( [
             'name' => $request->name,
-            'email_hour' => $request->email_hour,            
+            'email_hour' => $request->email_hour,
+            'email_off' => $request->email_off ? date('Y-m-d') : NULL,
             ] );
         $user->save();
         $request->session()->flash('success_alert', 'Settings updated');

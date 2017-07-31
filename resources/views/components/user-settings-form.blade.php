@@ -64,6 +64,24 @@
         </label>
     </div>
 
+    <div class="field{{ $errors->has('email_off') ? ' has-error' : '' }}">
+        <p class="control">
+            <label class="checkbox" for="email_off">
+
+                <input type="checkbox" class="checkbox" id="email_off" name="email_off" value="1" {{ is_null($user->email_off) ? '' : 'checked' }}>
+                <em>
+                    Stop sending daily emails.
+                </em>
+
+                @if ($errors->has('email_off'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('email_off') }}</strong>
+                    </span>
+                @endif
+            </label>
+        </p>
+    </div>
+
     <div class="field">
         <p class="control">
             <button type="submit" class="button is-primary">

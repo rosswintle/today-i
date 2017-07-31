@@ -11,6 +11,7 @@ class DailyReminders {
 	function sendAll() {
 
 		$usersToSend = User::where('email_hour', (int) date('H'))
+			->where('email_off', NULL)
 			->where( function($query) {
 				$query->where('last_email_sent_date', '<', date('Y-m-d') )
 					  ->orWhere('last_email_sent_hour', '<', (int) date('H'));
