@@ -43,5 +43,9 @@ class ActionTypesTableSeeder extends Seeder
         	// 'id' => 8,
         	'name' => 'taught',
             'icon_class' => 'fa-lightbulb-o']);
+        DB::table('action_types')->insert([
+        	// 'id' => 9,
+        	'name' => 'thanked',
+            'icon_class' => 'fa-thumbs-up']);
     }
 }
