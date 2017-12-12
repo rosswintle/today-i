@@ -23,7 +23,7 @@
         <input id="action-date-input" type="hidden" name="action-date" value=""> 
         <input type="submit" name="" value="{{ $randomness->actionButtonText() }}" class="button is-primary is-large">
     </p>
-    @if ( isset( $isMyProfile ) && $isMyProfile )
+    @if ( Auth::check() )
         <p>
             <button id="submit-yesterday" class="button is-secondary is-medium">
                 Actually, I did this yesterday!
