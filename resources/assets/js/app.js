@@ -13,11 +13,11 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+// Vue.component('example', require('./components/Example.vue'));
 
-const app = new Vue({
-    el: '#app'
-});
+// const app = new Vue({
+//     el: '#app'
+// });
 
 function todayiButtonSetup() {
     var buttons = document.querySelectorAll('#types button');
@@ -39,6 +39,17 @@ function todayiButtonSetup() {
     });
 };
 
+function todayiYesterdayButtonSetup() {
+    var button = document.getElementById('submit-yesterday');
+    var dateInput = document.getElementById('action-date-input');
+    var form = document.getElementById('action-form');
+    button.addEventListener( 'click', function (e) {
+        e.preventDefault();
+        dateInput.value = "yesterday";
+        form.submit();
+    })
+}
 
 document.addEventListener("DOMContentLoaded", todayiButtonSetup);
+document.addEventListener("DOMContentLoaded", todayiYesterdayButtonSetup);
 

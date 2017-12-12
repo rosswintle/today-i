@@ -20,7 +20,15 @@
         <input class="input is-large" type="text" name="text" placeholder="thing that you did...">
     </p>
     <p>
-        <input type="submit" name="submit" value="{{ $randomness->actionButtonText() }}" class="button is-primary is-large">
+        <input id="action-date-input" type="hidden" name="action-date" value=""> 
+        <input type="submit" name="" value="{{ $randomness->actionButtonText() }}" class="button is-primary is-large">
     </p>
+    @if ( isset( $isMyProfile ) && $isMyProfile )
+        <p>
+            <button id="submit-yesterday" class="button is-secondary is-medium">
+                Actually, I did this yesterday!
+            </button>
+        </p>
+    @endif
 
 </form>

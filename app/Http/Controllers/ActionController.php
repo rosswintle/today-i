@@ -89,8 +89,13 @@ class ActionController extends Controller
         $action->action_type_id = $actionData['type'];
         $action->text = $actionData['text'];
         $action->user_id = $user->id;
+
         $action_time = Carbon::now();
+        if ($request->input( 'action-date' ) == 'yesterday' ) {
+            $action_time = $action_time->subDay();
+        }
         $action->action_time = $action_time->toDateTimeString();
+
         $action->save();
         
         return redirect('/me');

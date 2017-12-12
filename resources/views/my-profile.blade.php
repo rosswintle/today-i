@@ -10,7 +10,7 @@
                     Today I...
                 </h1>
 
-                @component( 'components/action-form', [ 'types' => $types ] )
+                @component( 'components/action-form', [ 'types' => $types, 'isMyProfile' => true ] )
                 @endcomponent
 
             </div>
