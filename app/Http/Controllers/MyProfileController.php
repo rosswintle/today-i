@@ -24,7 +24,7 @@ class MyProfileController extends Controller
 
 		$userActions = Action::with('type')
 			->where('user_id', $user->id)
-			->latest()
+			->orderBy('action_time', 'DESC')
 			->paginate(10);
 
 		return view('my-profile', [

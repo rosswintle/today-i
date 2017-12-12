@@ -7,6 +7,7 @@ use App\Action;
 use App\User;
 use App\ActionType;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class ActionController extends Controller
 {
@@ -88,6 +89,8 @@ class ActionController extends Controller
         $action->action_type_id = $actionData['type'];
         $action->text = $actionData['text'];
         $action->user_id = $user->id;
+        $action_time = Carbon::now();
+        $action->action_time = $action_time->toDateTimeString();
         $action->save();
         
         return redirect('/me');
