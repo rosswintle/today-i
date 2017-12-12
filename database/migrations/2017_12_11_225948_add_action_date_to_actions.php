@@ -15,7 +15,7 @@ class AddActionDateToActions extends Migration
     public function up()
     {
         Schema::table('actions', function (Blueprint $table) {
-            $table->datetime( 'action_time' );
+            $table->datetime( 'action_time' )->nullable();
             /*
              * To migrate, do:
              * 
