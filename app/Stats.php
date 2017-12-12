@@ -28,20 +28,20 @@ class Stats
 	}
 
 	function constructToday() {
-		$this->today = Action::whereDate( 'created_at', $this->now->toDateString() )->count();
+		$this->today = Action::whereDate( 'action_time', $this->now->toDateString() )->count();
 	}
 
 	function constructYesterday() {
 		$yesterday = Carbon::yesterday();
-		$this->yesterday = Action::whereDate( 'created_at', $yesterday->toDateString() )->count();
+		$this->yesterday = Action::whereDate( 'action_time', $yesterday->toDateString() )->count();
 	}
 
 	function constructMonth() {
-		$this->month = Action::whereMonth( 'created_at', $this->now->month )->count();
+		$this->month = Action::whereMonth( 'action_time', $this->now->month )->count();
 	}
 
 	function constructYear() {
-		$this->year = Action::whereYear( 'created_at', $this->now->year )->count();
+		$this->year = Action::whereYear( 'action_time', $this->now->year )->count();
 	}
 
 }
