@@ -37,7 +37,8 @@ class Stats
 	}
 
 	function constructMonth() {
-		$this->month = Action::whereMonth( 'action_time', $this->now->month )->count();
+		$this->month = Action::whereMonth( 'action_time', $this->now->month )
+			->whereYear( 'action_time', $this->now->year )->count();
 	}
 
 	function constructYear() {
