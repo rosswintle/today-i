@@ -167,7 +167,6 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
-        Barryvdh\Debugbar\ServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Biscolab\ReCaptcha\ReCaptchaServiceProvider::class,
 
@@ -235,7 +234,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'ReCaptcha' => Biscolab\ReCaptcha\Facades\ReCaptcha::class,
-        'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
