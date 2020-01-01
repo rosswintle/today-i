@@ -12,6 +12,6 @@ class Action extends Model
 
     public function type()
     {
-        return $this->belongsTo('App\ActionType', 'action_type_id');
+        return $this->belongsTo(\App\ActionType::class, 'action_type_id');
     }
 }

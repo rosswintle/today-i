@@ -32,7 +32,7 @@ class User extends Authenticatable
 
     public function actions()
     {
-        return $this->hasMany('App\Action');
+        return $this->hasMany(\App\Action::class);
     }
 
     public function isAdmin()

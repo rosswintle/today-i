@@ -19,7 +19,7 @@ class RandomnessProvider extends ServiceProvider
             return new Randomness();
         });
 
-        View::share('randomness', app('App\Randomness'));
+        View::share('randomness', app(\App\Randomness::class));
     }
 
     /**

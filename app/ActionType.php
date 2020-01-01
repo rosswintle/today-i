@@ -13,6 +13,6 @@ class ActionType extends Model
 
     public function actions()
     {
-        return $this->hasMany('App\Action');
+        return $this->hasMany(\App\Action::class);
     }
 }

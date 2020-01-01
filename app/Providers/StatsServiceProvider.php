@@ -19,7 +19,7 @@ class StatsServiceProvider extends ServiceProvider
             return new Stats();
         });
 
-        View::share('stats', app('App\Stats'));
+        View::share('stats', app(\App\Stats::class));
     }
 
     /**
