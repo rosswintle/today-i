@@ -26,17 +26,15 @@ Route::get('/login/twitter/callback', 'TwitterLoginController@callback');
 
 // Admin-only functions
 Route::group(['middleware' => 'checkadmin'], function () {
-	Route::resource('action-type', 'ActionTypeController');
-	Route::resource('user', 'UserController', ['only' => ['index']]);
-	Route::get('/home', 'HomeController@index');
+    Route::resource('action-type', 'ActionTypeController');
+    Route::resource('user', 'UserController', ['only' => ['index']]);
+    Route::get('/home', 'HomeController@index');
 });
 
 Route::group(['middleware' => 'auth'], function () {
-	Route::get('/me', 'MyProfileController@show');
-	Route::resource('action', 'ActionController', ['only' => ['store','edit','update','destroy']]);
-	Route::resource('user', 'UserSettingsController', ['only' => ['edit','update','destroy']]);
+    Route::get('/me', 'MyProfileController@show');
+    Route::resource('action', 'ActionController', ['only' => ['store', 'edit', 'update', 'destroy']]);
+    Route::resource('user', 'UserSettingsController', ['only' => ['edit', 'update', 'destroy']]);
 });
-
-
 
 Auth::routes();

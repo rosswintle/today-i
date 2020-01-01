@@ -2,32 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Action;
+use App\ActionType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\ActionType;
-use App\Action;
 
 class StartController extends Controller
 {
-
-     /**
+    /**
      * Create a new controller instance.
      *
      * @return void
      */
     public function __construct()
     {
-    	//
+        //
     }
 
-    public function index() {
+    public function index()
+    {
+        $types = ActionType::all();
 
-    	$types = ActionType::all();
-
-		return view('welcome', [
-			'types' => $types,
-			]);
-
+        return view('welcome', [
+            'types' => $types,
+            ]);
     }
-
 }

@@ -2,15 +2,15 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
     use Notifiable;
 
     const USER_TYPE_NORMAL = 0;
-    const USER_TYPE_ADMIN  = 1;
+    const USER_TYPE_ADMIN = 1;
 
     /**
      * The attributes that are mass assignable.
@@ -30,12 +30,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function actions() {
+    public function actions()
+    {
         return $this->hasMany('App\Action');
     }
 
-    public function isAdmin() {
+    public function isAdmin()
+    {
         return $this->user_type == self::USER_TYPE_ADMIN;
     }
-
 }

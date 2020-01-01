@@ -16,7 +16,7 @@ class UserController extends Controller
     {
         $users = User::get();
 
-        return view('admin.user-index', [ 'users' => $users ]);
+        return view('admin.user-index', ['users' => $users]);
     }
 
     /**

@@ -27,7 +27,7 @@ class SendDailyReminders extends Command
      *
      * @return void
      */
-    public function __construct( \App\DailyReminders $remindersSender )
+    public function __construct(\App\DailyReminders $remindersSender)
     {
         parent::__construct();
 

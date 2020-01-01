@@ -2,31 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Socialite;
 use App\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Socialite;
 
 class TwitterLoginController extends Controller
 {
-    
-    function redirectToProvider() {
-    	return Socialite::driver('twitter')->redirect();
+    public function redirectToProvider()
+    {
+        return Socialite::driver('twitter')->redirect();
     }
 
-    function callback() {
-    	$twitterUser = Socialite::driver('twitter')->user();
-    	
-    	$user = User::where([
-    		'twitter_username' => $twitterUser->nickname
-    	])->first();
+    public function callback()
+    {
+        $twitterUser = Socialite::driver('twitter')->user();
 
-    	if ($user) {
-    		Auth::login($user);
-    		return redirect()->action('MyProfileController@show');
-    	} else {
-    		return redirect()->action('SignupController@index');
-    	}
+        $user = User::where([
+            'twitter_username' => $twitterUser->nickname,
+        ])->first();
+
+        if ($user) {
+            Auth::login($user);
+
+            return redirect()->action('MyProfileController@show');
+        } else {
+            return redirect()->action('SignupController@index');
+        }
     }
-
 }

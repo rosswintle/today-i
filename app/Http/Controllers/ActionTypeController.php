@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\ActionType;
+use Illuminate\Http\Request;
 
 class ActionTypeController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -16,6 +15,7 @@ class ActionTypeController extends Controller
     public function index()
     {
         $actionTypes = ActionType::all();
+
         return view('admin.action-type.index', [
             'actionTypes' => $actionTypes,
             ]);
@@ -45,7 +45,6 @@ class ActionTypeController extends Controller
         ]);
 
         return redirect()->action('ActionTypeController@index');
-
     }
 
     /**
@@ -68,7 +67,8 @@ class ActionTypeController extends Controller
     public function edit($id)
     {
         $actionType = ActionType::findOrFail($id);
-        return view('admin.action-type.edit', [ 'actionType' => $actionType ]);
+
+        return view('admin.action-type.edit', ['actionType' => $actionType]);
     }
 
     /**
@@ -86,6 +86,7 @@ class ActionTypeController extends Controller
                 'icon_class' => $request->icon_class,
             ]);
         $actionType->save();
+
         return redirect()->action('ActionTypeController@index');
     }
 
@@ -98,6 +99,7 @@ class ActionTypeController extends Controller
     public function destroy($id)
     {
         ActionType::destroy($id);
+
         return redirect()->action('ActionTypeController@index');
     }
 }

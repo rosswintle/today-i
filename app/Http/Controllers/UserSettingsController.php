@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserSettingsController extends Controller
 {
@@ -16,10 +16,11 @@ class UserSettingsController extends Controller
      */
     public function edit(User $user)
     {
-        if (! (Auth::user()->isAdmin() || Auth::id() == $user->id ) ) {
-            abort( 403, 'Oi! You can\'t do that!' );
+        if (! (Auth::user()->isAdmin() || Auth::id() == $user->id)) {
+            abort(403, 'Oi! You can\'t do that!');
         }
-        return view('user-settings.edit', [ 'user' => $user ]);
+
+        return view('user-settings.edit', ['user' => $user]);
     }
 
     /**
@@ -31,18 +32,19 @@ class UserSettingsController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        if (! (Auth::user()->isAdmin() || Auth::id() == $user->id ) ) {
-            abort( 403, 'Oi! You can\'t do that!' );
+        if (! (Auth::user()->isAdmin() || Auth::id() == $user->id)) {
+            abort(403, 'Oi! You can\'t do that!');
         }
 
-        $user->fill( [
+        $user->fill([
             'name' => $request->name,
             'email_hour' => $request->email_hour,
-            'email_off' => $request->email_off ? date('Y-m-d') : NULL,
+            'email_off' => $request->email_off ? date('Y-m-d') : null,
             'twitter_username' => $request->twitter_username,
-            ] );
+            ]);
         $user->save();
         $request->session()->flash('success_alert', 'Settings updated');
+
         return redirect()->action('UserSettingsController@edit', ['user' => $user->id]);
     }
 

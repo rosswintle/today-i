@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\View;
 use App\Randomness;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
 
 class RandomnessProvider extends ServiceProvider
 {
@@ -15,7 +15,7 @@ class RandomnessProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->singleton( Randomness::class, function () {
+        $this->app->singleton(Randomness::class, function () {
             return new Randomness();
         });
 

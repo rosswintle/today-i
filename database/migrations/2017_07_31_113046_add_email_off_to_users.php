@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class AddEmailOffToUsers extends Migration
 {
@@ -16,8 +16,8 @@ class AddEmailOffToUsers extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->date('email_off')
                 ->nullable()
-                ->default(NULL);
-        });    
+                ->default(null);
+        });
     }
 
     /**

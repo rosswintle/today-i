@@ -2,9 +2,9 @@
 
 namespace App\Http\Middleware;
 
+use App\User;
 use Closure;
 use Illuminate\Support\Facades\Auth;
-use App\User;
 
 class CheckAdmin
 {
@@ -17,13 +17,13 @@ class CheckAdmin
      */
     public function handle($request, Closure $next)
     {
-        if ( ! Auth::check() ) {
+        if (! Auth::check()) {
             return redirect('/login');
         }
 
         $user = Auth::user();
 
-        if ( ! User::USER_TYPE_ADMIN == $user->user_type ) {
+        if (! User::USER_TYPE_ADMIN == $user->user_type) {
             abort('404', 'You need to be an admin');
         }
 

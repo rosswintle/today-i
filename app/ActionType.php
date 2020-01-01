@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class ActionType extends Model
 {
+    protected $fillable = ['name', 'icon_class'];
 
-    protected $fillable = [ 'name', 'icon_class' ];
+    public $timestamps = false;
 
-	public $timestamps = false;
-
-    public function actions() {
-    	return $this->hasMany('App\Action');
+    public function actions()
+    {
+        return $this->hasMany('App\Action');
     }
 }

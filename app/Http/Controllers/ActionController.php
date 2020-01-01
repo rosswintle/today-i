@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Action;
-use App\User;
 use App\ActionType;
-use Illuminate\Support\Facades\Auth;
+use App\User;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ActionController extends Controller
 {
@@ -16,19 +16,19 @@ class ActionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index( $username = null )
+    public function index($username = null)
     {
         $authenticatedUser = Auth::user();
 
-        if ( $username ) {
-            $user = User::where( 'username', $username )->firstOrFail();
+        if ($username) {
+            $user = User::where('username', $username)->firstOrFail();
             $my_profile = false;
-            if ( $authenticatedUser && $authenticatedUser->ID == $user->ID ) {
+            if ($authenticatedUser && $authenticatedUser->ID == $user->ID) {
                 $my_profile = true;
             }
         } else {
             if (is_null($authenticatedUser)) {
-                abort( 404, "User not found" );
+                abort(404, 'User not found');
             } else {
                 $my_profile = true;
             }
@@ -41,7 +41,7 @@ class ActionController extends Controller
             ->latest()
             ->paginate(10);
 
-        if ( $my_profile ) {
+        if ($my_profile) {
             return view('my-profile', [
                 'user' => $user,
                 'types' => $types,
@@ -73,10 +73,9 @@ class ActionController extends Controller
      */
     public function store(Request $request)
     {
+        $user = Auth::user();
 
-        $user=Auth::user();
-
-        if ( $request->session()->has('posted_action_data') ) {
+        if ($request->session()->has('posted_action_data')) {
             $actionData = $request->session()->get('posted_action_data');
             $request->session()->forget('posted_action_data');
         } else {
@@ -91,15 +90,14 @@ class ActionController extends Controller
         $action->user_id = $user->id;
 
         $action_time = Carbon::now();
-        if ($request->input( 'action-date' ) == 'yesterday' ) {
+        if ($request->input('action-date') == 'yesterday') {
             $action_time = $action_time->subDay();
         }
         $action->action_time = $action_time->toDateTimeString();
 
         $action->save();
-        
+
         return redirect('/me');
-        
     }
 
     /**

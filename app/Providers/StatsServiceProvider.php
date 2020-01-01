@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\View;
 use App\Stats;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
 
 class StatsServiceProvider extends ServiceProvider
 {
@@ -15,7 +15,7 @@ class StatsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->singleton( Stats::class, function () {
+        $this->app->singleton(Stats::class, function () {
             return new Stats();
         });
 
