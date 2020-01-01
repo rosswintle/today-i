@@ -18,9 +18,9 @@
                         <td>{{ $actionType->name }}</td>
                         <td>{{ $actionType->icon_class }}</td>
                         <td>
-                            <a class="btn btn-default" href="{{ action('ActionTypeController@edit', ['id' => $actionType->id]) }}">Edit</a>
+                            <a class="btn btn-default" href="{{ action('ActionTypeController@edit', ['action_type' => $actionType->id]) }}">Edit</a>
                             &nbsp;
-                            <form style="display: inline-block;" action="{{ action('ActionTypeController@destroy', [ 'id' => $actionType->id ]) }}" method="POST">
+                            <form style="display: inline-block;" action="{{ action('ActionTypeController@destroy', [ 'action_type' => $actionType->id ]) }}" method="POST">
                                 {{ csrf_field() }}
                                 {{ method_field('delete') }}
                                 <input type="hidden" name="id" value="{{ $actionType->id }}">
