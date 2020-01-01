@@ -1,4 +1,4 @@
-<form class="form" role="form" method="POST" action="{{ url('/register') }}">
+<form id="register-form" class="form" role="form" method="POST" action="{{ url('/register') }}">
     {{ csrf_field() }}
 
     <div class="field{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -66,14 +66,9 @@
     </div>
 
     <div class="field">
-        {!! ReCaptcha::htmlFormSnippet() !!}
-    </div>
-
-    <div class="field">
         <p class="control">
-            <button type="submit" class="button is-primary">
-                Register
-            </button>
+            {!! ReCaptcha::htmlFormButton('Register') !!}
         </p>
     </div>
+
 </form>

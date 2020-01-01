@@ -8,7 +8,7 @@
         <title>@yield('title') - {{ config('app.name') }}</title>
 
         <link rel="stylesheet" type="text/css" href="{{ mix('/css/app.css') }}">
-        {!! ReCaptcha::htmlScriptTagJsApi() !!}
+        {!! ReCaptcha::htmlScriptTagJsApi('register-form') !!}
     </head>
     <body>
         
