@@ -66,7 +66,7 @@
     </div>
 
     <div class="field">
-        {!! Recaptcha::render() !!}
+        {!! ReCaptcha::htmlFormSnippet() !!}
     </div>
 
     <div class="field">

@@ -1,66 +1,48 @@
 <?php
 
+/**
+ *
+ * Biscolab Laravel ReCaptcha configuration file
+ * MIT License @ https://github.com/biscolab/laravel-recaptcha/blob/master/LICENSE
+ * author: Roberto Belotti - info@robertobelotti.com
+ * web : robertobelotti.com, github.com/biscolab
+ *
+ * To configure correctly please visit https://developers.google.com/recaptcha/docs/start
+ *
+ */
+
 return [
 
-    /*
-    |--------------------------------------------------------------------------
-    | API Keys
-    |--------------------------------------------------------------------------
-    |
-    | Set the public and private API keys as provided by reCAPTCHA.
-    |
-    | In version 2 of reCAPTCHA, public_key is the Site key,
-    | and private_key is the Secret key.
-    |
-    */
-    'public_key'     => env('RECAPTCHA_PUBLIC_KEY', ''),
-    'private_key'    => env('RECAPTCHA_PRIVATE_KEY', ''),
+	/**
+	 *
+	 * The site key
+	 * get site key @ www.google.com/recaptcha/admin
+	 *
+	 */
+    'api_site_key'      => env('RECAPTCHA_PUBLIC_KEY', ''),
 
-    /*
-    |--------------------------------------------------------------------------
-    | Template
-    |--------------------------------------------------------------------------
-    |
-    | Set a template to use if you don't want to use the standard one.
-    |
-    */
-    'template'    => '',
+	/**
+	 *
+	 * The secret key
+	 * get secret key @ www.google.com/recaptcha/admin
+	 *
+	 */    
+    'api_secret_key'    => env('RECAPTCHA_PRIVATE_KEY', ''),
 
-    /*
-    |--------------------------------------------------------------------------
-    | Driver
-    |--------------------------------------------------------------------------
-    |
-    | Determine how to call out to get response; values are 'curl' or 'native'.
-    | Only applies to v2.
-    |
-    */
-    'driver'      => 'curl',
+    /**
+     *
+     * ReCATCHA version
+     * Supported: "v2", "invisible",
+     *
+     * get more info @ https://developers.google.com/recaptcha/docs/versions
+     *
+     */
+    'version'			=> 'v2'  ,
 
-    /*
-    |--------------------------------------------------------------------------
-    | Options
-    |--------------------------------------------------------------------------
-    |
-    | Various options for the driver
-    |
-    */
-    'options'     => [
-
-        'curl_timeout' => 1,
-        'curl_verify' => true,
-
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Version
-    |--------------------------------------------------------------------------
-    |
-    | Set which version of ReCaptcha to use.
-    |
-    */
-
-    'version'     => 2,
-
+    /**
+     *
+     * IP addresses for which validation will be skipped
+     *
+     */
+    'skip_ip'			=> []    
 ];
