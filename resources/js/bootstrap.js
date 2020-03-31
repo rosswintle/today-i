@@ -11,6 +11,8 @@ window.$ = window.jQuery = require('jquery');
 
 require('bootstrap-sass');
 
+require('alpinejs');
+
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
  * using reactive data binding and reusable components. Vue's API is clean
@@ -44,19 +46,3 @@ window.axios.defaults.headers.common = {
 //     key: 'your-pusher-key'
 // });
 
-
-(function todayiButtonSetup() {
-    var buttons = document.querySelectorAll('#types button');
-    var typeInput = document.querySelector('#typeInput');
-    buttons.forEach( function(e) {
-        e.addEventListener('click', function(e) {
-            e.preventDefault();
-            buttons.forEach( function(button) {
-                button.classList.remove('selected');
-            } );
-            this.classList.add('selected');
-            var thisId = this.dataset.typeId;
-            typeInput.value = thisId;
-        });
-    });
-})();
