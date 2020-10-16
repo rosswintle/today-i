@@ -22,7 +22,7 @@
     @slot('footer')
         @component('mail::footer')
             You are receiving this because you signed up to daily creativity reminders from <a href="{{ config('app.url') }}">Today I...</a><br>
-            You can change the time of day that this gets sent or stop emails being sent on <a href="{{ action('UserSettingsController@edit', [ 'user' => $user->id ]) }}">your settings page</a>.
+            You can change the time of day that this gets sent or stop emails being sent on <a href="{{ action('App\Http\Controllers\UserSettingsController@edit', [ 'user' => $user->id ]) }}">your settings page</a>.
         @endcomponent
     @endslot
 @endcomponent

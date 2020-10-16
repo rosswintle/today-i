@@ -25,9 +25,9 @@ class TwitterLoginController extends Controller
         if ($user) {
             Auth::login($user);
 
-            return redirect()->action('MyProfileController@show');
+            return redirect()->action('App\Http\Controllers\MyProfileController@show');
         } else {
-            return redirect()->action('SignupController@index');
+            return redirect()->action('App\Http\Controllers\SignupController@index');
         }
     }
 }

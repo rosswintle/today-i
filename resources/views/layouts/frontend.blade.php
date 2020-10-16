@@ -11,10 +11,10 @@
         {!! ReCaptcha::htmlScriptTagJsApi(['form_id' => 'register-form']) !!}
     </head>
     <body>
-        
+
         <div class="container">
             <nav class="nav">
-            
+
                 <div class="nav-left logo">
                     <a class="nav-item" href="{{ url('/') }}">Today I</a>
                 </div>
@@ -24,7 +24,7 @@
                     @if (Route::has('login'))
                         @if (Auth::check())
                             <a class="nav-item" href="{{ url('/me') }}">Me</a>
-                            <a class="nav-item" href="{{ action('UserSettingsController@edit', ['user' => Auth::id() ]) }}">Settings</a>
+                            <a class="nav-item" href="{{ action('App\Http\Controllers\UserSettingsController@edit', ['user' => Auth::id() ]) }}">Settings</a>
                             @component('components.logout-link')
                             @endcomponent
                             @component('components.logout-form')

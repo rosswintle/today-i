@@ -10,7 +10,7 @@
                 <h2 class="title">Login</h2>
 
                 <p>
-                    <a href="{{ action('FacebookLoginController@redirectToProvider') }}">Sign up or log in 	with Facebook</a>
+                    <a href="{{ action('App\Http\Controllers\FacebookLoginController@redirectToProvider') }}">Sign up or log in 	with Facebook</a>
                 </p>
 
                 @component('components/login-form')

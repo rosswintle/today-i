@@ -45,7 +45,7 @@ class UserSettingsController extends Controller
         $user->save();
         $request->session()->flash('success_alert', 'Settings updated');
 
-        return redirect()->action('UserSettingsController@edit', ['user' => $user->id]);
+        return redirect()->action('App\Http\Controllers\UserSettingsController@edit', ['user' => $user->id]);
     }
 
     /**

@@ -8,7 +8,7 @@
                 <div class="panel-heading">Edit Action Type</div>
 
                 <div class="panel-body">
-                    <form action="{{ action('ActionTypeController@update', [ 'action_type' => $actionType->id ]) }}" method="POST">
+                    <form action="{{ action('App\Http\Controllers\ActionTypeController@update', [ 'action_type' => $actionType->id ]) }}" method="POST">
                         {{ csrf_field() }}
                         {{ method_field('PUT') }}
                         <div class="form-group">

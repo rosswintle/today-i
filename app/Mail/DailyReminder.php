@@ -21,7 +21,7 @@ class DailyReminder extends Mailable
      */
     public function __construct($user)
     {
-        $this->url = action('MyProfileController@show');
+        $this->url = action('App\Http\Controllers\MyProfileController@show');
         $this->user = $user;
     }
 

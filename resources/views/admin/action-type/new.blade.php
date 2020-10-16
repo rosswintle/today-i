@@ -8,7 +8,7 @@
                 <div class="panel-heading">New Action Type</div>
 
                 <div class="panel-body">
-                    <form action="{{ action('ActionTypeController@store') }}" method="POST">
+                    <form action="{{ action('App\Http\Controllers\ActionTypeController@store') }}" method="POST">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="name">Name</label>

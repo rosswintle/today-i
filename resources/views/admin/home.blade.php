@@ -10,7 +10,7 @@
                 <div class="panel-body">
                     <ul>
                         <li>
-                            <a href="{{ action('ActionTypeController@index') }}">Action Types</a>
+                            <a href="{{ action('App\Http\Controllers\ActionTypeController@index') }}">Action Types</a>
                         </li>
                     </ul>
 

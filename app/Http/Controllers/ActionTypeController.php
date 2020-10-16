@@ -44,7 +44,7 @@ class ActionTypeController extends Controller
             'icon_class' => $request->icon_class,
         ]);
 
-        return redirect()->action('ActionTypeController@index');
+        return redirect()->action('App\Http\Controllers\ActionTypeController@index');
     }
 
     /**
@@ -87,7 +87,7 @@ class ActionTypeController extends Controller
             ]);
         $actionType->save();
 
-        return redirect()->action('ActionTypeController@index');
+        return redirect()->action('App\Http\Controllers\ActionTypeController@index');
     }
 
     /**
@@ -100,6 +100,6 @@ class ActionTypeController extends Controller
     {
         ActionType::destroy($id);
 
-        return redirect()->action('ActionTypeController@index');
+        return redirect()->action('App\Http\Controllers\ActionTypeController@index');
     }
 }

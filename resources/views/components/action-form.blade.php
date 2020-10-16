@@ -3,7 +3,7 @@
         x-ref="form"
         id="action-form"
         method="POST"
-        action="{{ Auth::check() ? action('ActionController@store') : action('SignupController@index') }}">
+        action="{{ Auth::check() ? action('App\Http\Controllers\ActionController@store') : action('App\Http\Controllers\SignupController@index') }}">
 
     <div id="types">
         @foreach ($types as $type)
@@ -23,7 +23,7 @@
                     {{ $type->name }}
                 </span>
             </button>
-        @endforeach 
+        @endforeach
     </div>
 
     {{ csrf_field() }}

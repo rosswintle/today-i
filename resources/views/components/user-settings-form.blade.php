@@ -1,7 +1,7 @@
-<form class="form" role="form" method="POST" action="{{ action('UserSettingsController@update', ['user' => $user->id ]) }}">
+<form class="form" role="form" method="POST" action="{{ action('App\Http\Controllers\UserSettingsController@update', ['user' => $user->id ]) }}">
     {{ csrf_field() }}
     {{ method_field('PATCH') }}
-    
+
     <div class="field{{ $errors->has('name') ? ' has-error' : '' }}">
         <label class="label" for=" name">Name</label>
 
