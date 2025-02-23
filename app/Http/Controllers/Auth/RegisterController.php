@@ -52,7 +52,7 @@ class RegisterController extends Controller
             'username' => 'required|alpha_dash|max:50|unique:users',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-            'g-recaptcha-response' => 'required|recaptcha',
+            //'g-recaptcha-response' => 'required|recaptcha',
         ]);
     }
 

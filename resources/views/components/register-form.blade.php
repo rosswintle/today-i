@@ -65,10 +65,6 @@
         </p>
     </div>
 
-    <div class="field">
-        <p class="control">
-            {!! ReCaptcha::htmlFormButton('Register', ['class' => 'button is-primary']) !!}
-        </p>
-    </div>
+{{--    {!! ReCaptcha::htmlFormButton('Register', ['class' => 'button is-primary']) !!}--}}
 
 </form>
