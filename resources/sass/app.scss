@@ -3,16 +3,16 @@
 //@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 
 // Variables
-@import "variables";
+@use "variables";
 
 // Bootstrap
 //@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 // Font Awesome
-@import "resources/icons/font-awesome-4.7.0/scss/font-awesome.scss";
+@use "../icons/fontawesome-free-6.7.2-web/scss/fontawesome.scss";
 
 // Bulma
-@import "node_modules/bulma/bulma.sass";
+@use "../../node_modules/bulma/bulma.scss";
 
 html, body {
     background-color: #fff;

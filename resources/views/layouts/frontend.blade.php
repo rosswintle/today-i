@@ -7,7 +7,7 @@
 
         <title>@yield('title') - {{ config('app.name') }}</title>
 
-        <link rel="stylesheet" type="text/css" href="{{ mix('/css/app.css') }}">
+        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     </head>
     <body>
 
@@ -51,6 +51,5 @@
                 </div>
             </div>
         </footer>
-        <script src="{{ mix('/js/app.js') }}"></script>
     </body>
 </html>
