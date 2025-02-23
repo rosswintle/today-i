@@ -16,7 +16,7 @@
     </div>
 
     <div class="field{{ $errors->has('username') ? ' has-error' : '' }}">
-        <label for="username" class="label">Choose a userame</label>
+        <label for="username" class="label">Choose a username</label>
 
         <p class="control">
             <input id="username" type="text" class="input" name="username" value="{{ old('username') }}" required autofocus>
@@ -63,6 +63,10 @@
         <p class="control">
             <input id="password-confirm" type="password" class="input" name="password_confirmation" required>
         </p>
+    </div>
+
+    <div class="field">
+        <input type="submit" class="button is-primary" value="Register">
     </div>
 
 {{--    {!! ReCaptcha::htmlFormButton('Register', ['class' => 'button is-primary']) !!}--}}

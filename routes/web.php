@@ -4,8 +4,6 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\StartController;
 use App\Http\Controllers\SignupController;
-use App\Http\Controllers\FacebookLoginController;
-use App\Http\Controllers\TwitterLoginController;
 use App\Http\Controllers\ActionTypeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
@@ -31,12 +29,6 @@ Route::get('/', [StartController::class, 'index']);
 Route::post('/signup', [SignupController::class, 'index']);
 // This is for testing really, but you could end up here somehow
 Route::get('/signup', [SignupController::class, 'index']);
-
-// Socialite routes
-Route::get('/login/facebook', [FacebookLoginController::class, 'redirectToProvider']);
-Route::get('/login/facebook/callback', [FacebookLoginController::class, 'callback']);
-Route::get('/login/twitter', [TwitterLoginController::class, 'redirectToProvider']);
-Route::get('/login/twitter/callback', [TwitterLoginController::class, 'callback']);
 
 // Admin-only functions
 Route::group(['middleware' => 'checkadmin'], function () {

@@ -30,16 +30,4 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
-    'facebook' => [
-        'client_id' => env('FACEBOOK_APP_ID'),
-        'client_secret' => env('FACEBOOK_APP_SECRET'),
-        'redirect' => '/login/facebook/callback',
-    ],
-
-    'twitter' => [
-        'client_id' => env('TWITTER_APP_ID'),
-        'client_secret' => env('TWITTER_APP_SECRET'),
-        'redirect' => '/login/twitter/callback',
-    ],
-
 ];
