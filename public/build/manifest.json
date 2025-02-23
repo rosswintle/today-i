@@ -1,16 +1,17 @@
 {
   "resources/icons/noun_710550.svg": {
-    "file": "assets/noun_710550-25cdf748.svg",
+    "file": "assets/noun_710550-C8WNfaEx.svg",
     "src": "resources/icons/noun_710550.svg"
   },
   "resources/js/app.js": {
-    "file": "assets/app-c3828592.js",
-    "isEntry": true,
-    "src": "resources/js/app.js"
+    "file": "assets/app-B_9xOxt_.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
   },
   "resources/sass/app.scss": {
-    "file": "assets/app-0c455713.css",
-    "isEntry": true,
-    "src": "resources/sass/app.scss"
+    "file": "assets/app-C3R6NLXH.css",
+    "src": "resources/sass/app.scss",
+    "isEntry": true
   }
 }
